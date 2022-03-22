@@ -42,6 +42,9 @@ kill a container
 
 executing command in running containers
 
-docker exec -it container_id command
--i stand for input channel
--t start for pretty output text
+- docker exec -it container_id command
+  -i stand for input channel
+  -t start for pretty output text
+  - example - docker exec -it container_id redis-cli
+  - example - docker exec -it container_id sh (for full terminal access)
+  - example - docker run -it container_id sh (from starting)
