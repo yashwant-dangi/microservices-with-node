@@ -48,3 +48,8 @@ executing command in running containers
   - example - docker exec -it container_id redis-cli
   - example - docker exec -it container_id sh (for full terminal access)
   - example - docker run -it container_id sh (from starting)
+
+# Building a docker image
+
+- docker build .
+- docker build -t yashwantdangi/posts .
