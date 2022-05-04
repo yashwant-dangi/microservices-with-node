@@ -4,7 +4,7 @@ metadata:
   name: client-depl
 spec:
   replicas: 1
-  selectors:
+  selector:
     matchLabels:
       app: client
   template:
@@ -21,7 +21,7 @@ kind: Service
 metadata:
   name: client-srv
 spec:
-  selectors:
+  selector:
     app: client
   ports:
     - name: client
