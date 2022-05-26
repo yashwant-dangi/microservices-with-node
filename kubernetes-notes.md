@@ -26,3 +26,7 @@
 
 - kubectl get services
 - kubectl get services -n ingress-nginx
+
+## port forwarding
+
+- kubectl port-forward nats-depl-c48f5d4bd-fx998 4222:4222
