@@ -31,6 +31,7 @@ const ticketSchema = new mongoose.Schema(
   {
     toJSON: {
       transform(doc, ret) {
+        console.log("🚀 ~ file: ticket.ts ~ line 34 ~ transform ~ ret", ret);
         ret.id = ret._id;
         delete ret._id;
       },
@@ -39,6 +40,7 @@ const ticketSchema = new mongoose.Schema(
 );
 
 ticketSchema.statics.build = (attrs: TicketAttrs) => {
+  console.log("🚀 ~ file: ticket.ts ~ line 43 ~ attrs", attrs);
   return new Ticket(attrs);
 };
 ticketSchema.methods.isReserved = async function () {
