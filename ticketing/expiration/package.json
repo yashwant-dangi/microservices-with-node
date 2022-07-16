@@ -19,7 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/bull": "^3.15.8",
-    "@ydangi/common": "^1.0.10",
+    "@ydangi/common": "^1.0.11",
     "bull": "^4.8.4",
     "node-nats-streaming": "^0.3.2",
     "ts-node-dev": "^2.0.0",
