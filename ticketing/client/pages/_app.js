@@ -7,7 +7,9 @@ const AppComponent = ({ Component, ...rest }) => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <Component {...rest} />
+      <div className="container">
+        <Component {...rest} />
+      </div>
     </div>
   );
 };
