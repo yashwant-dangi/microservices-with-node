@@ -1,5 +1,33 @@
-const TicketShow = () => {
-    return <div>TicketShow</div>
+import buildClient from "../../api/build-client";
+import useRequest from '../../hooks/use-request'
+
+
+const TicketShow = ({ ticket }) => {
+    const { doRequest, errors } = useRequest({
+        url: '/api/orders',
+        method: 'post',
+        body: {
+            ticketId: ticket.id
+        },
+        onSuccess: (order) => console.log(order)
+    })
+    return <div>
+        <h1>{ticket.title}</h1>
+        <h4>Price: {ticket.price}</h4>
+        {errors}
+        <button onClick={doRequest} className="btn btn-primary">Purchase</button>
+    </div>
+}
+
+export async function getStaticProps(context) {
+    const { ticketId } = context.query;
+    const { data } = await buildClient.get(`/api/tickets/${ticketId}`);
+    return {
+        props: {
+            ticket: data
+        }
+    }
+
 }
 
 export default TicketShow;
