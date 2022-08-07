@@ -1,3 +1,4 @@
+import Router from 'next/router'
 import buildClient from "../../api/build-client";
 import useRequest from '../../hooks/use-request'
 
@@ -9,7 +10,7 @@ const TicketShow = ({ ticket }) => {
         body: {
             ticketId: ticket.id
         },
-        onSuccess: (order) => console.log(order)
+        onSuccess: (order) => Router.push('/orders/[orderId]', `/orders/${order.id}`)
     })
     return <div>
         <h1>{ticket.title}</h1>
