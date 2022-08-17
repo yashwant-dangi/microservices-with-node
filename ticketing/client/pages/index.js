@@ -35,18 +35,10 @@ const LandingPage = ({ currentUser, page, tickets }) => {
   )
 };
 
-export async function getServerSideProps(context, client) {
-  // console.log("LANDING PAGE!");
-  // const client = buildClient(context);
-  // const { data } = await client.get("/api/users/currentuser");
-  // data.page = "landing";
-
-  // return {
-  //   props: data,
-  // };
+export async function getServerSideProps(context) {
+  const client = buildClient(context);
   const { data } = await client.get('/api/tickets');
-
-  return { props: data }
+  return { props: { tickets: data } }
 }
 
 export default LandingPage;
