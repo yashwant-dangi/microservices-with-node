@@ -20,15 +20,22 @@ const TicketShow = ({ ticket }) => {
     </div>
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
+    const client = buildClient(context);
     const { ticketId } = context.query;
-    const { data } = await buildClient.get(`/api/tickets/${ticketId}`);
+    const { data } = await client.get(`/api/tickets/${ticketId}`);
     return {
         props: {
             ticket: data
         }
     }
-
 }
+
+// export async function getStaticPaths() {
+//     return {
+//         paths: [],
+//         fallback: 'blocking'
+//     }
+// }
 
 export default TicketShow;

@@ -10,8 +10,9 @@ const OrderIndex = ({ orders }) => {
     </ul>
 }
 
-export async function getStaticProps() {
-    const { data } = await buildClient.get('/api/orders');
+export async function getServerSideProps(context) {
+    const client = buildClient(context);
+    const { data } = await client.get('/api/orders');
 
     return {
         props: {
