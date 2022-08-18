@@ -31,3 +31,8 @@
 
 - kubectl port-forward nats-depl-c48f5d4bd-fx998 4222:4222
 - kubectl port-forward nats-depl-c48f5d4bd-fx998 8222:8222
+
+## kubernetes context
+
+- kubectl config view
+- kubectl config use-context <context_name>
