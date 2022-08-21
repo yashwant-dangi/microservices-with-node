@@ -8,6 +8,8 @@
 - kubectl logs [pod_name]
 - kubectl delete pod [pod_name]
 - kubectl apply -f [config_file_name]
+  kubectl apply -f posts-depl.yaml
+- kubectl rollout restart deployment <deployment-name> - to restart the deployment
 - kubectl describe pod [pod_name]
 
 ## kubernetes deployment commands
