@@ -53,3 +53,7 @@ executing command in running containers
 
 - docker build .
 - docker build -t yashwantdangi/posts .
+
+# Port Forwarding with docker image
+
+docker run -p 8080:8080 <image_name>
