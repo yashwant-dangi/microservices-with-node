@@ -26,6 +26,15 @@
 
 ## get services
 
+> Services provide networking between pods
+
+> Types of Services
+
+1. Cluster IP - sets up an easy-to-remember URL to access a pod. Only exposes pods in a cluster
+2. Node Port - Made a pod accessible from outside the cluster. Usually only used for dev purpose.
+3. Load Balancer - Make a pod accessiable from outside the cluster, right way to expose pod to outside world
+4. External Name - Redirects an in-cluster request to a CNAME url
+
 - kubectl get services
 - kubectl get services -n ingress-nginx
 
