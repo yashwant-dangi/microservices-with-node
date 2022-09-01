@@ -37,6 +37,7 @@
 
 - kubectl get services
 - kubectl get services -n ingress-nginx
+- kubectl apply -f posts-srv.yaml
 
 ## port forwarding
 
